@@ -1,0 +1,32 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, 'shirt', 'tops', 5.99, 25);
+INSERT INTO store VALUES (2, 'denim pants', 'bottoms', 15.99, 34);
+INSERT INTO store VALUES (3, 'loafers', 'shoes', 40.99, 45);
+INSERT INTO store VALUES (4, 'tanks', 'tops', 25.99, 36);
+INSERT INTO store VALUES (5, 'eyeglasses', 'eyewear', 20.99,67);
+INSERT INTO store VALUES (6, 'work jackets', 'outerwear', 60.99, 85);
+INSERT INTO store VALUES (7, 'shorts', 'bottoms', 26.99, 74);
+INSERT INTO store VALUES (8, 'ankle socks', 'legwear', 7.99, 28);
+INSERT INTO store VALUES (9, 'rings/necklaces', 'accessories', 10.99, 38);
+INSERT INTO store VALUES (10, 'beanies', 'headwear', 20.99, 59);
+INSERT INTO store VALUES (11, 'snapbacks', 'headwear', 39.99,80);
+INSERT INTO store VALUES (12, 'backpacks', 'accessories', 49.83, 38);
+INSERT INTO store VALUES (13, 'gloves', 'accessories', 20.99, 38);
+INSERT INTO store VALUES (14, 'longsleeves shirt', 'tops', 25.99, 35);
+INSERT INTO store VALUES (15, 'hoodies', 'outerwear', 45.99, 48);
+
+--display database by order price?
+
+SELECT * FROM STORE ORDER BY PRICE ASC;
+
+--what is the sum price of items in the accessories section?
+
+SELECT SUM(PRICE) 
+FROM STORE where SECTION= 'accessories';
+
+--what are the most popular 3 items?
+SELECT item, price, popularity 
+FROM store ORDER BY popularity ASC LIMIT 3;
