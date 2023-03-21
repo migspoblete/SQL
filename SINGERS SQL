@@ -1,0 +1,32 @@
+CREATE TABLE singers (  id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER, genre TEXT, city TEXT) ;
+INSERT INTO singers ( name, age, genre, city) VALUES ("Drake", 36, "Hip Hop", "Toronto") ;
+INSERT INTO singers ( name, age, genre, city) VALUES ("J Cole", 38, "Hip Hop", "Fayetteville");
+INSERT INTO singers ( name, age, genre, city) VALUES ("Kendrick", 35, "Hip Hop", "Compton");
+INSERT INTO singers ( name, age, genre, city) VALUES ("Chris Brown" , 33 , "R&B", "Tappahannock");
+INSERT INTO singers ( name, age, genre, city) VALUES ("Usher", 44, "R&B", "Dallas");
+INSERT INTO singers ( name, age, genre, city) VALUES ("Khelani", 27, "R&B", "Oakland");
+INSERT INTO singers ( name, age, genre, city) VALUES ("Deryck Whibley", 43, "Rock", "Scarborough");
+INSERT INTO singers ( name, age, genre, city) VALUES ("Dave Grohl", 54, "Rock", "Warren");
+INSERT INTO singers ( name, age, genre, city) VALUES
+("Pierre Bouvier", 43, "Alt Rock", "Montreal");
+INSERT INTO singers ( name, age, genre, city) VALUES ("MAX", 30, "Pop", "Manhattan");
+INSERT INTO singers ( name, age, genre, city) VALUES ("Bruno Mars", 37, "Pop", "Honolulu");
+INSERT INTO singers ( name, age, genre, city) VALUES ("Adam Levine", 44, "Pop", "Los Angeles");
+
+CREATE TABLE songs (  id INTEGER PRIMARY KEY AUTOINCREMENT, singer_id INTEGER, song TEXT);
+INSERT INTO songs (singer_id, song) VALUES (1, "Fire & Desire");
+INSERT INTO songs  (singer_id, song) VALUES (2, "No Role Models");
+INSERT INTO songs (singer_id, song) VALUES (3, "Poetic Justice");
+INSERT INTO songs (singer_id, song) VALUES (4, "With You");
+INSERT INTO songs (singer_id, song) VALUES (5, "My Boo");
+INSERT INTO songs (singer_id, song) VALUES (6, "Honey");
+INSERT INTO songs  (singer_id, song) VALUES (7, "Fat Lip");
+INSERT INTO songs (singer_id, song) VALUES (8, "Learn To Fly");
+INSERT INTO songs (singer_id, song) VALUES (9, "Perfect");
+INSERT INTO songs (singer_id, song) VALUES (10, "Lights Down Low");
+INSERT INTO songs (singer_id, song) VALUES (11, "Just they way you are");
+INSERT INTO songs (singer_id, song) VALUES (12, "She will be loved");
+
+-- How can you Join two table together based on the relation of each other?
+SELECT singers.name, song FROM singers
+LEFT JOIN songs ON singers.id=songs.singer_id;
